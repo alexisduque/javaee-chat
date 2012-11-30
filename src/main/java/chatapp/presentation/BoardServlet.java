@@ -40,7 +40,7 @@ public class BoardServlet extends HttpServlet{
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String message = request.getParameter("message");
         Date date = new Date();
-        DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy 'à' hh:mm:ss");
+        DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy '@' hh:mm:ss");
         String dateString = dateFormat.format(date);
        
         if (message != null ) {			
