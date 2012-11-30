@@ -15,5 +15,12 @@ public class ChatMessage {
     private String message;
     private String date;
         
+    public ChatMessage (Participant participant, String message, String date) {
+        this.participant = participant;
+        this.message = message;
+        this.date = date;
+     
+      
+    }
     
 }

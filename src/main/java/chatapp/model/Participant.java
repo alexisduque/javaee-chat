@@ -25,6 +25,11 @@ public class Participant implements Serializable{
             myMail = "N/A";
     }
     
+    public Participant (String name, String mail) {
+        this.myMail = mail;
+        this.myName = name;
+    }
+    
     public String getMail() {
         return myMail;
     }

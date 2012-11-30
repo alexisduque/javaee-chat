@@ -7,13 +7,13 @@ package chatapp.components;
 import chatapp.model.ChatMessage;
 import java.util.LinkedList;
 import java.util.List;
-
+import javax.ejb.Singleton;
 /**
  *
  * @author alexis
  */
 
-
+@Singleton
 public class ChatBoard {
     
     private LinkedList<ChatMessage> messages = new LinkedList();
