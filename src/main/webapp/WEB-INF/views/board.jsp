@@ -1,6 +1,6 @@
 <%-- 
-    Document   : index
-    Created on : 30 nov. 2012, 14:43:21
+    Document   : board
+    Created on : 30 nov. 2012, 15:28:41
     Author     : alexis
 --%>
 

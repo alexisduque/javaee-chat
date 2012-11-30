@@ -38,6 +38,7 @@ public class JoinServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String mail = request.getParameter("mail");
         String name = request.getParameter("name");
+        
         if (mail != null && name != null) {			
                 participant.setMail(mail);
                 participant.setName(name);
