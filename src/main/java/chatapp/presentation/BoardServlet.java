@@ -3,7 +3,9 @@
  * and open the template in the editor.
  */
 package chatapp.presentation;
-
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -29,17 +31,20 @@ public class BoardServlet extends HttpServlet{
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("message", participant.getMail());
+        request.setAttribute("participant", participant.getName());
+        request.setAttribute("chatboard", chatboard.messagesList());
         request.getServletContext().getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
     }
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String message = request.getParameter("message");
-        String date = request.getParameter("date");
-
+        Date date = new Date();
+        DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy 'à' hh:mm:ss");
+        String dateString = dateFormat.format(date);
+       
         if (message != null ) {			
-         chatboard.add(new ChatMessage (participant, date, message));
+         chatboard.add(new ChatMessage (participant, message, dateString));
         }
         
         response.sendRedirect("board");

@@ -19,8 +19,13 @@ public class ChatMessage {
         this.participant = participant;
         this.message = message;
         this.date = date;
-     
-      
     }
     
+    public String getName() {
+        return this.participant.getName();
+    }
+    
+    public String getMessage() {
+        return this.message;
+    }
 }
