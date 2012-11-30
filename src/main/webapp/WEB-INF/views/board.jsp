@@ -14,23 +14,42 @@
 <html>
     <head>
         <title>JSP Page</title>
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.css"/>
     </head>
     <body>
-        <p>
-        <form method="POST" action="board">
-        </p>
-    <p><p>
-        <label for="item">Chat Board </label></P>
-    <p>
-<textarea name="board" cols="60" rows="10" readonly="true"><% LinkedList<ChatMessage> liste = (LinkedList)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
-<%= nom %> > <%= messages %> / <%= date %><%}%>
-</textarea></P>
-    <p>    <input id="message" type="text" name="message"/></p>
-       <input type="hidden" name="action" value="add"/> 
-       <p>    <input type="submit" value="Post Message"/></p>
-    </p>
-</form>
+        
 
+        <form method="POST" action="board">
+            <table widht="20%">
+                <tr>
+                    <td align="center"> 
+                        <h3>Chat Board</h3> 
+                    </td>
+                </tr>
+                <tr>
+                    <td align="center">
+                        
+<textarea name="board" cols="120" rows="10" readonly="true"><% LinkedList<ChatMessage> liste = (LinkedList)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
+<%= nom %> > <%= messages %> / <%= date %><%}%>
+</textarea>
+                       
+                    </td>
+                </tr>
+                <tr>
+                    <td aling="center">
+                      
+                      <input id="message" type="text" name="message"/></p>  
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        
+                        <button class="btn btn-primary btn-block" type="submit" value="Post Message">Post Message</button>
+                    </td>
+            </tr>
+            </table>
+        </form>
+            
 
 
     </body>
