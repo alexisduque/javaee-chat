@@ -20,34 +20,35 @@
         
 
         <form method="POST" action="board">
-            <table widht="20%">
-                <tr>
-                    <td align="center"> 
-                        <h3>Chat Board</h3> 
-                    </td>
-                </tr>
-                <tr>
-                    <td align="center">
-                        
-<textarea name="board" cols="120" rows="10" readonly="true"><% LinkedList<ChatMessage> liste = (LinkedList)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
+            <table align ="center"><tr valign="center" heigth="100%"><td>
+                <table>
+                    <tr>
+                        <td align="center"> 
+                            <h3>Chat Board</h3> 
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+
+<textarea class="input-xxlarge" name="board" rows="20" readonly="true"><% LinkedList<ChatMessage> liste = (LinkedList)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
 <%= nom %> > <%= messages %> / <%= date %><%}%>
 </textarea>
-                       
-                    </td>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <td aling="center">
+
+                          <input id="message" class="input-xxlarge" type="text" name="message"/></p>  
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="center">
+                            <button class="btn btn-success input-xlarge" type="submit" value="Post Message">Post Message</button>
+                        </td>
                 </tr>
-                <tr>
-                    <td aling="center">
-                      
-                      <input id="message" type="text" name="message"/></p>  
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        
-                        <button class="btn btn-primary btn-block" type="submit" value="Post Message">Post Message</button>
-                    </td>
-            </tr>
-            </table>
+                </table>
+            </td></tr></table>
         </form>
             
 

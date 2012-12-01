@@ -17,8 +17,8 @@
              
 <b>
 <form method="POST" action="join">
-
-    <table width="20%">
+    <table>
+    <table width="350px" align="center">
         <tr>
             <td align ="center">
                 <h3>New Participant</h3>
@@ -27,41 +27,42 @@
      </table>
 
 
-    <table width="20%">
+    <table width="350px" align="center">
         <p>
-        <td align="center" valing="center">
+        <td align="right" valing="center">
             Name
         </td>
-        <td align="center">
+        <td align="right">
             <div class="input-prepend">
                 <span class="add-on">@</span>
-                <input class="span2" id="name" type="text" placeholder="Username" name="name" size="100%">
+                <input class="input-large" id="name" type="text" placeholder="Username" name="name" size="100%">
             </div>
         </p>
         </td>
 
         <tr>
-            <td align="center" valign="center">
+            <td align="right" valign="center">
                 Mail
             </td>
-            <td align="center">         
+            <td align="right">         
                 <div class="input-prepend">
                     <span class="add-on">@</span>
-                    <input class="span2" id="mail" type="text" placeholder="Email" name="mail">
+                    <input class="input-large" id="mail" type="text" placeholder="Email" name="mail">
                 </div>
             </td>
         </tr>
     </table>
-    <table width="20%">
+    <table width="350px" align="center">
         <tr align="center">
             <td align ="center">
                <p> 
                    <br>
-                    <button class="btn btn-primary btn-block" type="submit" value="Join !">Join !</button>
+                    <button class="btn btn-primary input-xlarge" type="submit" value="Join !">Join !</button>
                 </p> 
             </td>
         </tr>
     </table>
+
 </form>
 </b>
 </body>
