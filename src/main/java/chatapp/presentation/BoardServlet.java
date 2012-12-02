@@ -3,9 +3,12 @@
  * and open the template in the editor.
  */
 package chatapp.presentation;
+
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.io.IOException;
+
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,10 +16,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.ejb.*;
-import java.io.IOException;
+import javax.annotation.Resource;
+
 import chatapp.model.Participant;
 import chatapp.components.ChatBoard;
 import chatapp.model.ChatMessage;
+import chatapp.components.StatusBroadcaster;
 /**
  *
  * @author alexis
@@ -28,6 +33,7 @@ public class BoardServlet extends HttpServlet{
     
     @Inject Participant participant;
     @EJB ChatBoard chatboard;
+    @Resource StatusBroadcaster statusbroadcaster;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
