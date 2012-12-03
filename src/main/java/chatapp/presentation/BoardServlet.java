@@ -33,7 +33,7 @@ public class BoardServlet extends HttpServlet{
     
     @Inject Participant participant;
     @EJB ChatBoard chatboard;
-    //@Resource StatusBroadcaster statusbroadcaster;
+    @Inject StatusBroadcaster statusbroadcaster;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -52,7 +52,7 @@ public class BoardServlet extends HttpServlet{
         if (message.startsWith(("/status")) == false ) {			
          chatboard.add(new ChatMessage (participant, message, dateString));
         } else {
-       //     statusbroadcaster.postUpdate(participant.getName(), message.substring(7));
+            statusbroadcaster.postUpdate(participant.getName(), message.substring(7));
         }
         
         response.sendRedirect("board");

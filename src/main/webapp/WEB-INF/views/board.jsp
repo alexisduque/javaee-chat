@@ -7,6 +7,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="chatapp.components.ChatBoard" %>
 <%@ page import="chatapp.model.ChatMessage" %>
+<%@ page import="chatapp.components.StatusBroadcaster" %>
 <%@ page import="java.util.LinkedList" %>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

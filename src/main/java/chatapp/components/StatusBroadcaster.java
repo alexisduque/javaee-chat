@@ -13,6 +13,7 @@ import javax.jms.JMSException;
 import javax.jms.MessageProducer;
 import javax.jms.Session;
 import javax.jms.TextMessage;
+import javax.naming.*;
         
         
  /*
@@ -20,13 +21,12 @@ import javax.jms.TextMessage;
  */
 
 @Stateless
-
 public class StatusBroadcaster {
     
-    @Resource(mappedName="java:/StatusConnectionFactory") 
-    private ConnectionFactory statusFactory;
-    @Resource(mappedName="java:/jms/ParticipantStatusBroadcast") 
-    private Topic topic;
+    @Resource(mappedName="StatusConnectionFactory") 
+    public ConnectionFactory statusFactory;
+    @Resource(mappedName="jms/ParticipantStatusBroadcast") 
+    public Topic topic;
 
     public void postUpdate(String who, String status) {
         try {
