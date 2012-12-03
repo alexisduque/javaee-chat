@@ -33,7 +33,7 @@ public class BoardServlet extends HttpServlet{
     
     @Inject Participant participant;
     @EJB ChatBoard chatboard;
-    @Resource StatusBroadcaster statusbroadcaster;
+    //@Resource StatusBroadcaster statusbroadcaster;
     
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -49,8 +49,10 @@ public class BoardServlet extends HttpServlet{
         DateFormat dateFormat = new SimpleDateFormat("dd MMMM yyyy '@' hh:mm:ss");
         String dateString = dateFormat.format(date);
        
-        if (message != null ) {			
+        if (message.startsWith(("/status")) == false ) {			
          chatboard.add(new ChatMessage (participant, message, dateString));
+        } else {
+       //     statusbroadcaster.postUpdate(participant.getName(), message.substring(7));
         }
         
         response.sendRedirect("board");
