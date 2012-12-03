@@ -34,7 +34,7 @@ public class StatusBroadcaster {
             connection.start();
             Session session = connection.createSession(true, Session.AUTO_ACKNOWLEDGE);
             MessageProducer producer = session.createProducer(topic);
-            TextMessage message = session.createTextMessage(who+"(*.*)"+status);
+            TextMessage message = session.createTextMessage(who+":"+status);
             producer.send(message);
             producer.close();
             session.close();
