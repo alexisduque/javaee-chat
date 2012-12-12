@@ -5,7 +5,7 @@
 package chatapp.presentation;
 
 import chatapp.model.Participant;
-
+import chatapp.model.ChatMessage;
 import javax.inject.Inject;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,6 +23,9 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/join")
 public class JoinServlet extends HttpServlet {
+    
+    @Inject 
+    ChatMessage message;
     
     @Inject 
     Participant participant;

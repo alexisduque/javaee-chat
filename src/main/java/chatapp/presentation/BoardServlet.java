@@ -38,6 +38,7 @@ public class BoardServlet extends HttpServlet{
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.setAttribute("participant", participant.getName());
+        request.setAttribute("mail", participant.getMail());
         request.setAttribute("chatboard", chatboard.messagesList());
         request.getServletContext().getRequestDispatcher("/WEB-INF/views/board.jsp").forward(request, response);
     }

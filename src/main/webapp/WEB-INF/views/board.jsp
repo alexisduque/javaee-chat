@@ -31,7 +31,7 @@
                     <tr>
                         <td align="center">
 
-<textarea class="input-xxlarge" name="board" rows="20" readonly="true"><% LinkedList<ChatMessage> liste = (LinkedList)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
+<textarea class="input-xxlarge" name="board" rows="20" readonly="true"><% List<ChatMessage> liste = (List)request.getAttribute("chatboard"); %><% for (ChatMessage message : liste) { %> <% String nom = message.getName();%><% String mail = message.getMail();%><% String messages = message.getMessage();%><% String date = message.getDate();%>
 <%= nom %> > <%= messages %> / <%= date %><%}%>
 </textarea>
 
